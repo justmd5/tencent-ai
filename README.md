@@ -7,8 +7,7 @@
 <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://img.shields.io/github/stars/justmd5/tencent-ai.svg?style=social&label=Stars" alt="GitHub stars"></a>
 <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://poser.pugx.org/justmd5/tencent-ai/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://poser.pugx.org/justmd5/tencent-ai/v/unstable.svg" alt="Latest Unstable Version"></a>
-<a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://poser.pugx.org/justmd5/tencent-ai/downloads" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://poser.pugx.org/justmd5/tencent-ai/license" alt="License"></a>
+<a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://img.shields.io/github/license/justmd5/tencent-ai.svg" alt="License"></a>
 </p>
 
 ## Requirement
