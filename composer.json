@@ -1,0 +1,22 @@
+{
+  "name": "justmd5/tencent-ai",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "丁海军",
+      "email": "heyjun2012@gmail.com",
+      "homepage":"http://justmd5.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Justmd5\\TencentAi\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "hanson/foundation-sdk": "^2.0"
+  }
+}
