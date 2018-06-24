@@ -13,13 +13,12 @@
 <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://poser.pugx.org/justmd5/tencent-ai/license" alt="License"></a>
 </p>
 
-- [Tencent AI](https://ai.qq.com)
+## Requirement
+1. PHP >= 7.0
+2. **[Composer](https://getcomposer.org/)**
+3. ext-curl 拓展
+4. ext-json 拓展
 
-- [Official Documents](https://ai.qq.com/doc/index.shtml)
-
-## Require
-
-* **PHP 7.0+**
 ## install
 
 `composer require justmd5/tencent-ai:dev-master`
@@ -50,6 +49,8 @@ try {
     dd($e);
 }
 ```
+## Documentation
+[Tencent AI](https://ai.qq.com)  · [Official Documents](https://ai.qq.com/doc/index.shtml)
 ### Help
 qq群
 
@@ -58,8 +59,10 @@ qq群
 </p>
 
 ### Thanks
+
 - thanks to [hanson/foundation-sdk](https://github.com/Hanson/foundation-sdk)
 
 ## License
 
 MIT
+

@@ -1,5 +1,12 @@
 {
   "name": "justmd5/tencent-ai",
+  "description": "腾讯AI开放平台sdk",
+  "keywords": [
+    "tencent",
+    "tencent-ai",
+    "ai-sdk",
+    "sdk"
+  ],
   "license": "MIT",
   "authors": [
     {
