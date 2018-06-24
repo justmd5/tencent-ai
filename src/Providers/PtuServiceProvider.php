@@ -3,8 +3,9 @@
  * Created for tencent-ai.
  * User: 丁海军
  * Date: 2018/6/23
- * Time: 下午5:10
+ * Time: 下午5:10.
  */
+
 namespace Justmd5\TencentAi\Providers;
 
 use Justmd5\TencentAi\Core\API;
@@ -13,7 +14,6 @@ use Pimple\ServiceProviderInterface;
 
 class PtuServiceProvider implements ServiceProviderInterface
 {
-
     /**
      * Registers services on the given container.
      *
@@ -22,9 +22,9 @@ class PtuServiceProvider implements ServiceProviderInterface
      *
      * @param Container $pimple A container instance
      */
-    public function register (Container $pimple)
+    public function register(Container $pimple)
     {
-        $filter        = [
+        $filter = [
             'facecosmetic'   => [],
             'facedecoration' => [],
             'facemerge'      => [],

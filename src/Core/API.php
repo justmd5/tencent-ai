@@ -3,8 +3,9 @@
  * Created for tencent-ai.
  * User: 丁海军
  * Date: 2018/6/23
- * Time: 下午5:10
+ * Time: 下午5:10.
  */
+
 namespace Justmd5\TencentAi\Core;
 
 use Hanson\Foundation\AbstractAPI;
@@ -25,40 +26,39 @@ class API extends AbstractAPI
     protected $classify;
     protected $filter;
 
-    public function __construct (Signature $signature, $classify, $filter)
+    public function __construct(Signature $signature, $classify, $filter)
     {
-
         $this->signature = $signature;
-        $this->classify  = $classify;
-        $this->filter    = $filter;
+        $this->classify = $classify;
+        $this->filter = $filter;
     }
 
     /**
-     * 请求API
+     * 请求API.
      *
      * @param string $method
      * @param array  $params
      * @param array  $files
      *
-     * @return array|string
      * @throws \Justmd5\TencentAi\Exception\NotFoundException
+     *
+     * @return array|string
      */
-    public function request ($method, $params = [], $files = [])
+    public function request($method, $params = [], $files = [])
     {
         $url = sprintf('%s/%s/%s_%s', self::BASE_API, $this->classify, $this->classify, strtolower($method));
         if (!collect($this->filter)->has(strtolower($method))) {
             throw new NotFoundException(sprintf('the url %s can not found!please reaffirm', $url));
         }
-        $http           = $this->getHttp();
+        $http = $this->getHttp();
         $params['sign'] = $this->signature->getReqSign($params);
-        $response       = $files ? $http->upload($url, $params, $files) : $http->post($url, $params);
-        $result         = json_decode(strval($response->getBody()), true);
+        $response = $files ? $http->upload($url, $params, $files) : $http->post($url, $params);
+        $result = json_decode(strval($response->getBody()), true);
         if (isset($result['ret']) && $result['ret'] == 0) {
             return $result['data'];
         }
 
         return isset($result['msg']) ? $result['msg'] : '未知错误';
-
     }
 
     /**
@@ -66,8 +66,7 @@ class API extends AbstractAPI
      *
      * @return mixed
      */
-    public function middlewares ()
+    public function middlewares()
     {
     }
-
 }
