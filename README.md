@@ -55,6 +55,10 @@ qq群
 <img width="200" src="https://ws1.sinaimg.cn/mw690/bc1dfc6agy1fsmg3zak6cj20f00kk7ei.jpg">
 </p>
 
+### Todo
+
+- [ ] parameter verify
+
 ### Thanks
 
 - thanks to [hanson/foundation-sdk](https://github.com/Hanson/foundation-sdk)
