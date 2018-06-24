@@ -18,7 +18,7 @@ class Signature
         $this->secret = $secret;
     }
 
-    public function getReqSign ($params)
+    public function getReqSign (&$params)
     {
         $params['app_id'] = $this->appId;
         if (empty($params['nonce_str'])) {
