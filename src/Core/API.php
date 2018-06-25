@@ -26,11 +26,11 @@ class API extends AbstractAPI
     protected $classify;
     protected $filter;
 
-    public function __construct (Signature $signature, $classify, $filter)
+    public function __construct(Signature $signature, $classify, $filter)
     {
         $this->signature = $signature;
-        $this->classify  = $classify;
-        $this->filter    = $filter;
+        $this->classify = $classify;
+        $this->filter = $filter;
     }
 
     /**
@@ -44,16 +44,16 @@ class API extends AbstractAPI
      *
      * @return array
      */
-    public function request ($method, $params = [], $files = [])
+    public function request($method, $params = [], $files = [])
     {
         $url = sprintf('%s/%s/%s_%s', self::BASE_API, $this->classify, $this->classify, strtolower($method));
         if (!collect($this->filter)->has(strtolower($method))) {
             throw new NotFoundException(sprintf('the url %s can not found!please reaffirm', $url));
         }
-        $http           = $this->getHttp();
+        $http = $this->getHttp();
         $params['sign'] = $this->signature->getReqSign($params);
-        $response       = $files ? $http->upload($url, $params, $files) : $http->post($url, $params);
-        $result         = json_decode(strval($response->getBody()), true);
+        $response = $files ? $http->upload($url, $params, $files) : $http->post($url, $params);
+        $result = json_decode(strval($response->getBody()), true);
         if (isset($result['ret'])) {
             return $result;
         }
@@ -69,7 +69,7 @@ class API extends AbstractAPI
      *
      * @return mixed
      */
-    public function middlewares ()
+    public function middlewares()
     {
     }
 }
