@@ -42,7 +42,7 @@ class API extends AbstractAPI
      *
      * @throws \Justmd5\TencentAi\Exception\NotFoundException
      *
-     * @return array|string
+     * @return array
      */
     public function request($method, $params = [], $files = [])
     {
@@ -54,11 +54,11 @@ class API extends AbstractAPI
         $params['sign'] = $this->signature->getReqSign($params);
         $response = $files ? $http->upload($url, $params, $files) : $http->post($url, $params);
         $result = json_decode(strval($response->getBody()), true);
-        if (isset($result['ret']) && $result['ret'] == 0) {
-            return $result['data'];
+        if (isset($result['ret'])) {
+            return $result;
         }
 
-        return isset($result['msg']) ? $result['msg'] : '未知错误';
+        return ['ret'=>'-1','msg'=>'未定义错误'];
     }
 
     /**
