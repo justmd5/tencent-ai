@@ -11,11 +11,11 @@ namespace Justmd5\TencentAi\Core;
 class Signature
 {
     /**
-     * @var string $appId
+     * @var string
      */
     private $appId;
     /**
-     * @var string $secret
+     * @var string
      */
     private $secret;
 
@@ -25,9 +25,9 @@ class Signature
      * @param $appId
      * @param $secret
      */
-    public function __construct ($appId, $secret)
+    public function __construct($appId, $secret)
     {
-        $this->appId  = $appId;
+        $this->appId = $appId;
         $this->secret = $secret;
     }
 
@@ -36,7 +36,7 @@ class Signature
      *
      * @return string
      */
-    public function getReqSign (&$params)
+    public function getReqSign(&$params)
     {
         $params['app_id'] = $this->appId;
         if (empty($params['nonce_str'])) {
@@ -49,10 +49,10 @@ class Signature
         $str = '';
         array_walk($params, function ($item, $key) use (&$str) {
             if ($item !== '') {
-                $str .= $key . '=' . urlencode($item) . '&';
+                $str .= $key.'='.urlencode($item).'&';
             }
         });
-        $str  .= 'app_key=' . $this->secret;
+        $str .= 'app_key='.$this->secret;
         $sign = strtoupper(md5($str));
 
         return $sign;
