@@ -27,7 +27,7 @@
 $config  = [
     'appKey'    => '1106944xxx',
     'appSecret' => 'dsgnbnWnX8Yxxxxxx',
-    'debug'     => 0,
+    'debug'     => 0,//1 show debug info 
 ];
 $AI      = new \Justmd5\TencentAi\Ai($config);
 
