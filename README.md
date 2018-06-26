@@ -18,7 +18,7 @@
 
 ## install
 
-`composer require justmd5/tencent-ai:dev-master`
+`composer require justmd5/tencent-ai`
 
 ### Usage
 
