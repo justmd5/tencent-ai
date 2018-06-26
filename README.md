@@ -34,8 +34,8 @@ $AI      = new \Justmd5\TencentAi\Ai($config);
 ```
 
 ### Interface call example
-- [智能闲聊](https://ai.qq.com/doc/nlpchat.shtml) url: https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat
-- request like bellow
+> [智能闲聊](https://ai.qq.com/doc/nlpchat.shtml) url: https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat
+> request like bellow
 ```
 $params = [
 'question'=>'腾讯人工智能',
