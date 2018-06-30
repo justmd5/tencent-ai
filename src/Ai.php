@@ -26,12 +26,6 @@ class Ai extends Foundation
 {
     protected $providers = [
         Core\CoreServiceProvider::class,
-        Providers\AaiServiceProvider::class,
-        Providers\FaceServiceProvider::class,
-        Providers\ImageServiceProvider::class,
-        Providers\NlpServiceProvider::class,
-        Providers\OcrServiceProvider::class,
-        Providers\PtuServiceProvider::class,
-        Providers\VisionServiceProvider::class,
+        Core\ApplicationProvider::class,
     ];
 }

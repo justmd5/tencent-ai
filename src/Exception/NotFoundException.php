@@ -10,5 +10,5 @@ namespace Justmd5\TencentAi\Exception;
 
 class NotFoundException extends \Exception
 {
-    protected $code = 10400;
+    protected $code = 10404;
 }
