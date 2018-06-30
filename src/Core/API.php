@@ -10,6 +10,9 @@ namespace Justmd5\TencentAi\Core;
 
 use Hanson\Foundation\AbstractAPI;
 use Justmd5\TencentAi\Exception\NotFoundException;
+use Justmd5\TencentAi\Exception\IllegalParameterException;
+use Overtrue\Validation\Factory as ValidatorFactory;
+use Overtrue\Validation\Translator;
 
 class API extends AbstractAPI
 {
@@ -43,12 +46,18 @@ class API extends AbstractAPI
      * @throws \Justmd5\TencentAi\Exception\NotFoundException
      *
      * @return array
+     * @throws \Justmd5\TencentAi\Exception\IllegalParameterException
      */
     public function request($method, $params = [], $files = [])
     {
         $url = sprintf('%s/%s/%s_%s', self::BASE_API, $this->classify, $this->classify, strtolower($method));
         if (!collect($this->filter)->has(strtolower($method))) {
             throw new NotFoundException(sprintf('the url %s can not found!please reaffirm', $url));
+        }
+        $factory   = new ValidatorFactory(new Translator);
+        $validator = $factory->make($params, $this->filter[$method]);
+        if (!$validator->passes()) {
+            throw new IllegalParameterException(sprintf('参数错误:[%s]', json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)));
         }
         $http = $this->getHttp();
         $params['sign'] = $this->signature->getReqSign($params);
