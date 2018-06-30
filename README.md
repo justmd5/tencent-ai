@@ -11,13 +11,13 @@
 <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://img.shields.io/github/license/justmd5/tencent-ai.svg" alt="License"></a>
 </p>
 
-## Requirement
+### Requirement
 1. PHP >= 7.0
 2. **[Composer](https://getcomposer.org/)**
 3. ext-curl 拓展
 4. ext-json 拓展
 
-## install
+### install
 
 `composer require justmd5/tencent-ai`
 
@@ -48,7 +48,7 @@ try {
     dd($e);
 }
 ```
-## Documentation
+### Documentation
 [Tencent AI](https://ai.qq.com)  · [Official Documents](https://ai.qq.com/doc/index.shtml)
 ### Help
 qq群
