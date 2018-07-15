@@ -12,12 +12,23 @@ trait FilterTrait
 {
     protected $filterArray = [
         'aai'    => [
-            'asr'       => [],
-            'asrs'      => [],
-            'wxasrs'    => [],
-            'wxasrlong' => [],
-            'tts'       => [],
-            'tta'       => [],
+            'asr'           => [
+                'format'       => 'require|integer|in:1,2,3,4',
+                'speech'       => 'require|string|max:8192',
+                'rate'         => 'require|integer|in:8000,16000',
+            ],
+            'asrs'          => [],
+            'wxasrs'        => [],
+            'wxasrlong'     => [],
+            'tts'           => [],
+            'tta'           => [],
+            'detectkeyword' => [ //关键词检索
+                                 'callback_url' => 'require|url',
+                                 'speech'       => 'required_without:speech_url',
+                                 'speech_url'   => 'required_without:speech',
+                                 'key_words'    => 'required',
+                                 'format'       => 'require|integer|in:1',
+            ],
         ],
         'face'   => [
             'detectface'         => [],
