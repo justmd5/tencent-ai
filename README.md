@@ -64,10 +64,11 @@ qq群
 ### 感谢
 
 - thanks to [hanson/foundation-sdk](https://github.com/Hanson/foundation-sdk)
-### 其他源码列表
+### 源码列表
 
 | SDK 联系人 QQ | 语言 | 实现接口 | 源代码&SDK 地址 |
 | --- | --- | --- | --- |
+| 910139966 | PHP | ALL | https://github.com/justmd5/tencent-ai|
 | 783021975 | JAVA | ALL | https://gitee.com/xshuai/taip|
 | 1361653339 | Golang | ALL | https://github.com/shiguanghuxian/txai |
 | 1280827369 | NodeJS |  <div>非全部接口实现</div>| https://github.com/w89612b/qqai-api-sdk |
