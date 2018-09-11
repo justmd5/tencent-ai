@@ -17,11 +17,11 @@
 3. ext-curl 拓展
 4. ext-json 拓展
 
-### install
+### 安装
 
 `composer require justmd5/tencent-ai`
 
-### Usage
+### 使用
 
 ```php
 
@@ -34,9 +34,9 @@ $AI      = new \Justmd5\TencentAi\Ai($config);
 
 ```
 
-### Interface call example
+### 接口调用示例
 > [智能闲聊](https://ai.qq.com/doc/nlpchat.shtml) url: https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat
-> request like bellow
+> 请求示例如下：
 ```
 $params = [
 'question'=>'腾讯人工智能',
@@ -48,9 +48,9 @@ try {
     dd($e);
 }
 ```
-### Documentation
+### 文档
 [Tencent AI](https://ai.qq.com)  · [Official Documents](https://ai.qq.com/doc/index.shtml)
-### Help
+### 帮助
 qq群
 
 <p align="center">
@@ -61,9 +61,17 @@ qq群
 
 - [ ] parameter verify
 
-### Thanks
+### 感谢
 
 - thanks to [hanson/foundation-sdk](https://github.com/Hanson/foundation-sdk)
+### 其他源码列表
+
+| SDK 联系人 QQ | 语言 | 实现接口 | 源代码&SDK 地址 |
+| --- | --- | --- | --- |
+| 783021975 | JAVA | ALL | https://gitee.com/xshuai/taip|
+| 1361653339 | Golang | ALL | https://github.com/shiguanghuxian/txai |
+| 1280827369 | NodeJS |  <div>非全部接口实现</div>| https://github.com/w89612b/qqai-api-sdk |
+| 1109527533 | Python | <div>非全部接口实现(完善中)</div>|https://gitee.com/french-home/TencentAISDK |
 
 ## License
 
