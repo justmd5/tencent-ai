@@ -73,6 +73,7 @@ qq群
 | 1361653339 | Golang | ALL | https://github.com/shiguanghuxian/txai |
 | 1280827369 | NodeJS |  <div>非全部接口实现</div>| https://github.com/w89612b/qqai-api-sdk |
 | 1109527533 | Python | <div>非全部接口实现(完善中)</div>|https://gitee.com/french-home/TencentAISDK |
+| 1928881525 | .NET(C#) | <div>OCR接口实现人脸模块接口实现</div>|https://gitee.com/ch_1928881525/Tentcent.Ai |
 
 ## License
 
