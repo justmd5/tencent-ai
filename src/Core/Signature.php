@@ -27,7 +27,7 @@ class Signature
      */
     public function __construct($appId, $secret)
     {
-        $this->appId = $appId;
+        $this->appId  = $appId;
         $this->secret = $secret;
     }
 
@@ -49,12 +49,10 @@ class Signature
         $str = '';
         array_walk($params, function ($item, $key) use (&$str) {
             if ($item !== '') {
-                $str .= $key.'='.urlencode($item).'&';
+                $str .= sprintf('%s=%s&', $key, urlencode($item));
             }
         });
-        $str .= 'app_key='.$this->secret;
-        $sign = strtoupper(md5($str));
 
-        return $sign;
+        return strtoupper(md5(sprintf('%s%s=%s', $str, 'app_key', $this->secret)));
     }
 }
