@@ -18,6 +18,7 @@ trait FilterTrait
                 'rate'   => 'require|integer|in:8000,16000',
             ],
             'asrs'          => [],
+            'evilaudio'     => [],
             'wxasrs'        => [],
             'wxasrlong'     => [],
             'tts'           => [],
