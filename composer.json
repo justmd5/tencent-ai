@@ -24,7 +24,7 @@
     "php": ">=7.0",
     "ext-curl": "*",
     "ext-json": "*",
-    "hanson/foundation-sdk": "^2.0",
+    "hanson/foundation-sdk": "^3.0",
     "overtrue/validation": "^2.0"
   }
 }
