@@ -9,6 +9,7 @@
 namespace Justmd5\TencentAi\Core;
 
 use Pimple\Container;
+use Hanson\Foundation\Foundation;
 use Pimple\ServiceProviderInterface;
 
 class CoreServiceProvider implements ServiceProviderInterface
@@ -23,8 +24,8 @@ class CoreServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $pimple)
     {
-        $pimple['signature'] = function ($pimple) {
-            return new Signature($pimple['config']['appKey'], $pimple['config']['appSecret']);
+        $pimple['signature'] = function (Foundation $pimple) {
+            return new Signature($pimple->getConfig()['appKey'], $pimple->getConfig()['appSecret']);
         };
     }
 }

@@ -51,7 +51,7 @@ class API extends AbstractAPI
     public function request($method, $params = [], $files = [])
     {
         $url = sprintf('%s/%s/%s_%s', self::BASE_API, $this->classify, $this->classify, strtolower($method));
-        if (!collect($this->filter)->has(strtolower($method))) {
+        if (!key_exists(strtolower($method),$this->filter)) {
             throw new NotFoundException(sprintf('the url %s can not found!please reaffirm', $url));
         }
         $factory = new ValidatorFactory(new Translator());
