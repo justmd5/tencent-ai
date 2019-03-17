@@ -8,8 +8,8 @@
 
 namespace Justmd5\TencentAi\Core;
 
-use Pimple\Container;
 use Hanson\Foundation\Foundation;
+use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
 class CoreServiceProvider implements ServiceProviderInterface
