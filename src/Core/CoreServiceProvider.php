@@ -25,7 +25,7 @@ class CoreServiceProvider implements ServiceProviderInterface
     public function register(Container $pimple)
     {
         $pimple['signature'] = function (Foundation $pimple) {
-            return new Signature($pimple->getConfig()['appKey'], $pimple->getConfig()['appSecret']);
+            return new Signature($pimple->getConfig('appKey'), $pimple->getConfig('appSecret'));
         };
     }
 }
