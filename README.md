@@ -10,7 +10,14 @@
 <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://poser.pugx.org/justmd5/tencent-ai/v/unstable.svg" alt="Latest Unstable Version"></a>
 <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://img.shields.io/github/license/justmd5/tencent-ai.svg" alt="License"></a>
 </p>
-
+<p align="center">
+  <b>Special thanks to the generous sponsorship by:</b>
+  <br><br>
+  <a target="_blank" href="https://www.jetbrains.com/?from=tencent-ai">
+    <img src="https://i.loli.net/2018/03/21/5ab223b75cdfa.png" width=250>
+  </a>
+  <br><br>
+</p>
 ### Requirement
 1. PHP >= 7.0
 2. **[Composer](https://getcomposer.org/)**
