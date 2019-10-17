@@ -89,7 +89,6 @@ trait FilterTrait
         'ptu'    => [
             'facecosmetic'   => [],
             'facedecoration' => [],
-            'facemerge'      => [],
             'facesticker'    => [],
             'faceage'        => [],
             'imgfilter'      => [],
