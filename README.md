@@ -58,6 +58,7 @@ try {
     dd($e);
 }
 ```
+> [看图说话](https://ai.qq.com/doc/imgtotext.shtml) url: https://api.ai.qq.com/fcgi-bin/vision/vision_imgtotext
 > 请求示例2：
 ```
 $params = [
