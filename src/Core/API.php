@@ -9,11 +9,11 @@
 namespace Justmd5\TencentAi\Core;
 
 use Hanson\Foundation\AbstractAPI;
+use Justmd5\TencentAi\Core\Traits\ArgumentProcessingTrait;
 use Justmd5\TencentAi\Exception\IllegalParameterException;
 use Justmd5\TencentAi\Exception\NotFoundException;
 use Overtrue\Validation\Factory as ValidatorFactory;
 use Overtrue\Validation\Translator;
-use Justmd5\TencentAi\Core\Traits\ArgumentProcessingTrait;
 
 class API extends AbstractAPI
 {
@@ -43,13 +43,13 @@ class API extends AbstractAPI
      * 请求API.
      *
      * @param string $method
-     * @param array $params
-     * @param array $files
+     * @param array  $params
+     * @param array  $files
+     *
+     * @throws IllegalParameterException
+     * @throws NotFoundException
      *
      * @return array
-     * @throws IllegalParameterException
-     *
-     * @throws NotFoundException
      */
     public function request($method, $params = [], $files = [])
     {
@@ -63,7 +63,7 @@ class API extends AbstractAPI
             throw new IllegalParameterException(sprintf('参数错误:[%s]', json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)));
         }
         $http = $this->getHttp();
-        $params=$this->processParams($this->signature,$params);
+        $params = $this->processParams($this->signature, $params);
         $response = $files ? $http->upload($url, $params, $files) : $http->post($url, $params);
         $result = json_decode(strval($response->getBody()), true);
         if (isset($result['ret'])) {
