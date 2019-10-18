@@ -39,12 +39,6 @@ class Signature
     public function getReqSign(&$params)
     {
         $params['app_id'] = $this->appId;
-        if (empty($params['nonce_str'])) {
-            $params['nonce_str'] = md5(uniqid("{$params['app_id']}_"));
-        }
-        if (empty($params['time_stamp'])) {
-            $params['time_stamp'] = strval(time());
-        }
         ksort($params);
         $str = '';
         array_walk($params, function ($item, $key) use (&$str) {
