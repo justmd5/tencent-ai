@@ -46,7 +46,7 @@ $AI      = new \Justmd5\TencentAi\Ai($config);
 
 ### 接口调用示例
 > [智能闲聊](https://ai.qq.com/doc/nlpchat.shtml) url: https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat
-> 请求示例如下：
+> 请求示例1：
 ```
 $params = [
 'question'=>'腾讯人工智能',
@@ -56,6 +56,22 @@ try {
     dd($AI->nlp->request('textchat', $params));
 } catch (\Justmd5\TencentAi\Exception\NotFoundException $e) {
     dd($e);
+}
+```
+> 请求示例2：
+```
+$params = [
+//image 支持两种传递参数方式
+//  'image'      => base64_encode(file_get_contents(__DIR__ . '/1571126902_843200.jpg')),//old
+    'image'      => __DIR__ . '/1571126902_843200.jpg',//new 
+    'session_id' => time(),
+];
+try {
+    var_dump($AI->vision->request('imgtotext', $params));
+} catch (\Justmd5\TencentAi\Exception\NotFoundException $e) {
+    print_r($e->getMessage());
+} catch (\Justmd5\TencentAi\Exception\IllegalParameterException $e) {
+    print_r($e->getMessage());
 }
 ```
 ### 文档
@@ -78,12 +94,12 @@ qq群
 
 | SDK 联系人 QQ | 语言 | 实现接口 | 源代码&SDK 地址 |
 | --- | --- | --- | --- |
-| 910139966 | PHP | ALL | https://github.com/justmd5/tencent-ai|
 | 783021975 | JAVA | ALL | https://gitee.com/xshuai/taip|
 | 1361653339 | Golang | ALL | https://github.com/shiguanghuxian/txai |
 | 1280827369 | NodeJS |  <div>非全部接口实现</div>| https://github.com/w89612b/qqai-api-sdk |
 | 1109527533 | Python | <div>非全部接口实现(完善中)</div>|https://gitee.com/french-home/TencentAISDK |
 | 1928881525 | .NET(C#) | <div>OCR接口实现人脸模块接口实现</div>|https://gitee.com/ch_1928881525/Tentcent.Ai |
+| 910139966 | PHP | ALL | https://github.com/justmd5/tencent-ai|
 
 ## License
 
