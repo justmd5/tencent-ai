@@ -13,9 +13,12 @@ use Justmd5\TencentAi\Exception\IllegalParameterException;
 use Justmd5\TencentAi\Exception\NotFoundException;
 use Overtrue\Validation\Factory as ValidatorFactory;
 use Overtrue\Validation\Translator;
+use Justmd5\TencentAi\Core\Traits\ArgumentProcessingTrait;
 
 class API extends AbstractAPI
 {
+    use ArgumentProcessingTrait;
+
     const BASE_API = 'https://api.ai.qq.com/fcgi-bin/';
 
     /**
@@ -23,7 +26,7 @@ class API extends AbstractAPI
      */
     protected $category;
     /**
-     * @var \Justmd5\TencentAi\Core\Signature
+     * @var Signature
      */
     protected $signature;
     protected $classify;
@@ -40,13 +43,13 @@ class API extends AbstractAPI
      * 请求API.
      *
      * @param string $method
-     * @param array  $params
-     * @param array  $files
-     *
-     * @throws \Justmd5\TencentAi\Exception\NotFoundException
-     * @throws \Justmd5\TencentAi\Exception\IllegalParameterException
+     * @param array $params
+     * @param array $files
      *
      * @return array
+     * @throws IllegalParameterException
+     *
+     * @throws NotFoundException
      */
     public function request($method, $params = [], $files = [])
     {
@@ -60,7 +63,7 @@ class API extends AbstractAPI
             throw new IllegalParameterException(sprintf('参数错误:[%s]', json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)));
         }
         $http = $this->getHttp();
-        $params['sign'] = $this->signature->getReqSign($params);
+        $params=$this->processParams($this->signature,$params);
         $response = $files ? $http->upload($url, $params, $files) : $http->post($url, $params);
         $result = json_decode(strval($response->getBody()), true);
         if (isset($result['ret'])) {

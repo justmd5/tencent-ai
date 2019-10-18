@@ -8,6 +8,7 @@
 
 namespace Justmd5\TencentAi\Core;
 
+use Justmd5\TencentAi\Core\Traits\FilterTrait;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 

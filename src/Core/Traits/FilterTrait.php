@@ -6,7 +6,7 @@
  * Time: 下午7:53.
  */
 
-namespace Justmd5\TencentAi\Core;
+namespace Justmd5\TencentAi\Core\Traits;
 
 trait FilterTrait
 {
