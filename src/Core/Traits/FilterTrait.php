@@ -24,11 +24,11 @@ trait FilterTrait
             'tts'           => [],
             'tta'           => [],
             'detectkeyword' => [ //关键词检索
-                'callback_url' => 'require|url',
-                'speech'       => 'required_without:speech_url',
-                'speech_url'   => 'required_without:speech',
-                'key_words'    => 'required',
-                'format'       => 'require|integer|in:1',
+                                 'callback_url' => 'require|url',
+                                 'speech'       => 'required_without:speech_url',
+                                 'speech_url'   => 'required_without:speech',
+                                 'key_words'    => 'required',
+                                 'format'       => 'require|integer|in:1',
             ],
         ],
         'face'   => [
