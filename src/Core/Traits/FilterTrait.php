@@ -24,11 +24,11 @@ trait FilterTrait
             'tts'           => [],
             'tta'           => [],
             'detectkeyword' => [ //关键词检索
-                'callback_url' => 'require|url',
-                'speech'       => 'required_without:speech_url',
-                'speech_url'   => 'required_without:speech',
-                'key_words'    => 'required',
-                'format'       => 'require|integer|in:1',
+                                 'callback_url' => 'require|url',
+                                 'speech'       => 'required_without:speech_url',
+                                 'speech_url'   => 'required_without:speech',
+                                 'key_words'    => 'required',
+                                 'format'       => 'require|integer|in:1',
             ],
         ],
         'face'   => [
@@ -37,7 +37,7 @@ trait FilterTrait
             'facecompare'        => ['image_a' => 'required', 'image_b' => 'required'],
             'detectcrossageface' => ['source_image' => 'required', 'target_image' => 'required'],
             'faceshape'          => ['image' => 'required', 'mode' => 'required:in:0,1'],
-            'faceidentify'       => ['image' => 'required', 'group_id'=>'required', 'topn'=>'required|between:1,10'],
+            'faceidentify'       => ['image' => 'required', 'group_id' => 'required', 'topn' => 'required|between:1,10'],
             'faceverify'         => [],
             'newperson'          => [],
             'delperson'          => [],
@@ -57,10 +57,10 @@ trait FilterTrait
             'fuzzy'     => ['image' => 'required'],
         ],
         'nlp'    => [
-            'speechtranslate' => ['seq'=>'required|integer', 'end'=>'required|integer', 'session_id'=>'required|string|size:64'],
+            'speechtranslate' => ['seq' => 'required|integer', 'end' => 'required|integer', 'session_id' => 'required|string|size:64'],
             'textpolar'       => ['text' => 'required|max:200'],
             'texttrans'       => ['text' => 'required|max:1024'],
-            'texttranslate'   => ['type'=>'required|integer|between:0,16', 'text' => 'required|max:1024'],
+            'texttranslate'   => ['type' => 'required|integer|between:0,16', 'text' => 'required|max:1024'],
             'textchat'        => [
                 'session'  => 'required|max:32',
                 'question' => 'required|max:3000',

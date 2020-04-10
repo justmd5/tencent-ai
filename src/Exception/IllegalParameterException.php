@@ -8,7 +8,9 @@
 
 namespace Justmd5\TencentAi\Exception;
 
-class IllegalParameterException extends \Exception
+use Exception;
+
+class IllegalParameterException extends Exception
 {
     protected $code = 10403;
 }
