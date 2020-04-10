@@ -34,22 +34,21 @@ class API extends AbstractAPI
     public function __construct(Signature $signature, $classify, $filter)
     {
         $this->signature = $signature;
-        $this->classify  = $classify;
-        $this->filter    = $filter;
+        $this->classify = $classify;
+        $this->filter = $filter;
     }
 
     /**
      * 请求API.
      *
      * @param string $method
-     * @param array $params
-     * @param array $files
+     * @param array  $params
+     * @param array  $files
      *
-     * @return array
      * @throws NotFoundException
      * @throws IllegalParameterException
      *
-     * @throws IllegalParameterException
+     * @return array
      */
     public function request($method, $params = [], $files = [])
     {
@@ -57,15 +56,15 @@ class API extends AbstractAPI
         if (!array_key_exists(strtolower($method), $this->filter)) {
             throw new NotFoundException(sprintf('the url %s can not found!please reaffirm', $url));
         }
-        $factory   = new ValidatorFactory(new Translator());
+        $factory = new ValidatorFactory(new Translator());
         $validator = $factory->make($params, $this->filter[$method]);
         if (!$validator->passes()) {
             throw new IllegalParameterException(sprintf('参数错误:[%s]', json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)));
         }
-        $http     = $this->getHttp();
-        $params   = $this->processParams($this->signature, $params);
+        $http = $this->getHttp();
+        $params = $this->processParams($this->signature, $params);
         $response = $files ? $http->upload($url, $params, $files) : $http->post($url, $params);
-        $result   = json_decode(strval($response->getBody()), true);
+        $result = json_decode(strval($response->getBody()), true);
         if (isset($result['ret'])) {
             return $result;
         }
