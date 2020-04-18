@@ -20,18 +20,16 @@ class API extends AbstractAPI
     use ArgumentProcessingTrait;
 
     const BASE_API = 'https://api.ai.qq.com/fcgi-bin/';
-
-    /**
-     * @var string
-     */
-    protected $category;
-    /**
-     * @var Signature
-     */
     protected $signature;
     protected $classify;
     protected $filter;
 
+    /**
+     * API constructor.
+     * @param Signature $signature
+     * @param string $classify
+     * @param array $filter
+     */
     public function __construct(Signature $signature, $classify, $filter)
     {
         $this->signature = $signature;
@@ -74,14 +72,5 @@ class API extends AbstractAPI
             'ret' => '-1',
             'msg' => sprintf('返回结果:[%s]', json_encode($result, JSON_UNESCAPED_UNICODE)),
         ];
-    }
-
-    /**
-     * Push guzzle middleware before request.
-     *
-     * @return mixed
-     */
-    public function middlewares()
-    {
     }
 }
