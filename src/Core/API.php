@@ -26,9 +26,10 @@ class API extends AbstractAPI
 
     /**
      * API constructor.
+     *
      * @param Signature $signature
-     * @param string $classify
-     * @param array $filter
+     * @param string    $classify
+     * @param array     $filter
      */
     public function __construct(Signature $signature, $classify, $filter)
     {

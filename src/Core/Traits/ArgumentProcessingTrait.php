@@ -8,7 +8,8 @@ trait ArgumentProcessingTrait
 {
     /**
      * @param Signature $signature
-     * @param array $params
+     * @param array     $params
+     *
      * @return array
      */
     public function processParams(Signature $signature, $params)
