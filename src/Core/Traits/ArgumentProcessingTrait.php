@@ -6,6 +6,12 @@ use Justmd5\TencentAi\Core\Signature;
 
 trait ArgumentProcessingTrait
 {
+    /**
+     * @param Signature $signature
+     * @param array     $params
+     *
+     * @return array
+     */
     public function processParams(Signature $signature, $params)
     {
         if (empty($params['nonce_str'])) {
