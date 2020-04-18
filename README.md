@@ -5,8 +5,7 @@
 <p align="center">
 <a href="https://styleci.io/repos/138467318"><img src="https://styleci.io/repos/138467318/shield?branch=master" alt="styleci"></a>
 <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://img.shields.io/packagist/php-v/justmd5/tencent-ai.svg" alt="PHP from Packagist"></a>
-<a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://poser.pugx.org/justmd5/tencent-ai/downloads.svg" alt="Total Downloadsn"></a>
-    <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://img.shields.io/github/stars/justmd5/tencent-ai.svg?style=social&label=Stars" alt="GitHub stars"></a>
+<a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://img.shields.io/github/stars/justmd5/tencent-ai.svg?style=social&label=Stars" alt="GitHub stars"></a>
 <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://poser.pugx.org/justmd5/tencent-ai/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/justmd5/tencent-ai"><img src="https://poser.pugx.org/justmd5/tencent-ai/v/unstable.svg" alt="Latest Unstable Version"></a>
 <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fjustmd5%2Ftencent-ai?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjustmd5%2Ftencent-ai.svg?type=shield"/></a>
