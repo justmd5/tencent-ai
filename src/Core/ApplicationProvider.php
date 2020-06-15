@@ -28,7 +28,7 @@ class ApplicationProvider implements ServiceProviderInterface
     {
         array_walk($this->filterArray, function ($filter, $key) use (&$pimple) {
             $pimple[$key] = function ($pimple) use ($filter, $key) {
-                return new API($pimple['signature'], $key, $filter);
+                return new API($pimple,$key, $filter);
             };
         });
     }
