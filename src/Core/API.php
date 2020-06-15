@@ -9,6 +9,7 @@
 namespace Justmd5\TencentAi\Core;
 
 use Hanson\Foundation\AbstractAPI;
+use Hanson\Foundation\Foundation;
 use Justmd5\TencentAi\Core\Traits\ArgumentProcessingTrait;
 use Justmd5\TencentAi\Exception\IllegalParameterException;
 use Justmd5\TencentAi\Exception\NotFoundException;
@@ -20,20 +21,19 @@ class API extends AbstractAPI
     use ArgumentProcessingTrait;
 
     const BASE_API = 'https://api.ai.qq.com/fcgi-bin/';
-    protected $signature;
     protected $classify;
     protected $filter;
 
     /**
      * API constructor.
      *
-     * @param Signature $signature
-     * @param string    $classify
-     * @param array     $filter
+     * @param Foundation $app
+     * @param string     $classify
+     * @param array      $filter
      */
-    public function __construct(Signature $signature, $classify, $filter)
+    public function __construct(Foundation $app, $classify, $filter)
     {
-        $this->signature = $signature;
+        parent::__construct($app);
         $this->classify = $classify;
         $this->filter = $filter;
     }
@@ -62,7 +62,7 @@ class API extends AbstractAPI
             throw new IllegalParameterException(sprintf('参数错误:[%s]', json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)));
         }
         $http = $this->getHttp();
-        $params = $this->processParams($this->signature, $params);
+        $params = $this->processParams($this->app['signature'], $params);
         $response = $files ? $http->upload($url, $params, $files) : $http->post($url, $params);
         $result = json_decode(strval($response->getBody()), true);
         if (isset($result['ret'])) {
