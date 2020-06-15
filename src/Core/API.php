@@ -28,10 +28,10 @@ class API extends AbstractAPI
      * API constructor.
      *
      * @param Foundation $app
-     * @param string $classify
-     * @param array $filter
+     * @param string     $classify
+     * @param array      $filter
      */
-    public function __construct(Foundation $app,$classify, $filter)
+    public function __construct(Foundation $app, $classify, $filter)
     {
         parent::__construct($app);
         $this->classify = $classify;
