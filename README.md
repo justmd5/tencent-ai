@@ -87,6 +87,11 @@ qq群
 
 - [ ] parameter verify
 
+### Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/justmd5/tencent-ai.svg)](https://starchart.cc/justmd5/tencent-ai)
+      
+
 ### 感谢
 
 - thanks to [hanson/foundation-sdk](https://github.com/Hanson/foundation-sdk)
