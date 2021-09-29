@@ -14,13 +14,13 @@ use Hanson\Foundation\Foundation;
  * Class Ai.
  *
  * @property Core\Signature $signature
- * @property Core\API $aai
- * @property Core\API $face
- * @property Core\API $image
- * @property Core\API $nlp
- * @property Core\API $ocr
- * @property Core\API $ptu
- * @property Core\API $vision
+ * @property Core\API       $aai
+ * @property Core\API       $face
+ * @property Core\API       $image
+ * @property Core\API       $nlp
+ * @property Core\API       $ocr
+ * @property Core\API       $ptu
+ * @property Core\API       $vision
  */
 class Ai extends Foundation
 {
