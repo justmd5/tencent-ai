@@ -20,7 +20,7 @@ class API extends AbstractAPI
 {
     use ArgumentProcessingTrait;
 
-    const BASE_API = 'https://api.ai.qq.com/fcgi-bin/';
+    const BASE_API = 'https://api.ai.qq.com/fcgi-bin';
     protected $classify;
     protected $filter;
 
