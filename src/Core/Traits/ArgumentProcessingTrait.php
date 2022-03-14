@@ -8,11 +8,11 @@ trait ArgumentProcessingTrait
 {
     /**
      * @param Signature $signature
-     * @param array     $params
+     * @param  array  $params
      *
      * @return array
      */
-    public function processParams(Signature $signature, $params)
+    public function processParams(Signature $signature, array $params): array
     {
         if (empty($params['nonce_str'])) {
             $params['nonce_str'] = md5(uniqid('TencentAi_'));

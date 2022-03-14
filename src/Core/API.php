@@ -28,10 +28,10 @@ class API extends AbstractAPI
      * API constructor.
      *
      * @param Foundation $app
-     * @param string     $classify
-     * @param array      $filter
+     * @param  string  $classify
+     * @param  array  $filter
      */
-    public function __construct(Foundation $app, $classify, $filter)
+    public function __construct(Foundation $app, string $classify, array $filter)
     {
         parent::__construct($app);
         $this->classify = $classify;
@@ -41,16 +41,16 @@ class API extends AbstractAPI
     /**
      * 请求API.
      *
-     * @param string $method
-     * @param array  $params
-     * @param array  $files
-     *
-     * @throws NotFoundException
-     * @throws IllegalParameterException
+     * @param string  $method
+     * @param  array  $params
+     * @param  array  $files
      *
      * @return array
+     *@throws IllegalParameterException
+     *
+     * @throws NotFoundException
      */
-    public function request($method, $params = [], $files = [])
+    public function request(string $method, array $params = [], array $files = []): array
     {
         $url = sprintf('%s/%s/%s_%s', self::BASE_API, $this->classify, $this->classify, strtolower($method));
         if (!array_key_exists(strtolower($method), $this->filter)) {
