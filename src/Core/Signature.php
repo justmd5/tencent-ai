@@ -32,7 +32,7 @@ class Signature
     }
 
     /**
-     * @param  array  $params
+     * @param array $params
      *
      * @return string
      */

@@ -28,8 +28,8 @@ class API extends AbstractAPI
      * API constructor.
      *
      * @param Foundation $app
-     * @param  string  $classify
-     * @param  array  $filter
+     * @param string     $classify
+     * @param array      $filter
      */
     public function __construct(Foundation $app, string $classify, array $filter)
     {
@@ -41,14 +41,14 @@ class API extends AbstractAPI
     /**
      * 请求API.
      *
-     * @param string  $method
-     * @param  array  $params
-     * @param  array  $files
+     * @param string $method
+     * @param array  $params
+     * @param array  $files
+     *
+     *@throws IllegalParameterException
+     * @throws NotFoundException
      *
      * @return array
-     *@throws IllegalParameterException
-     *
-     * @throws NotFoundException
      */
     public function request(string $method, array $params = [], array $files = []): array
     {
