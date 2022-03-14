@@ -32,11 +32,11 @@ class Signature
     }
 
     /**
-     * @param array $params
+     * @param  array  $params
      *
      * @return string
      */
-    public function getReqSign(&$params)
+    public function getReqSign(array &$params): string
     {
         $params['app_id'] = $this->appId;
         ksort($params);
