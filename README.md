@@ -1,3 +1,5 @@
+> 📢 请注意！由于腾讯原有免费API已关闭，该项目目前已属于不可用状态
+
 <h1 align="center">腾讯AI开放平台 SDK</h1>
 
 <p align="center">Tencent AI open platform sdk</p>
